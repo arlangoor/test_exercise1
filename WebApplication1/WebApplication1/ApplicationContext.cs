@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace WebApplication1
+namespace ProjectPatientsClinics
 {
 	public class ApplicationContext: DbContext
 	{
