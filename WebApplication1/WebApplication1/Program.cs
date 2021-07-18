@@ -13,7 +13,11 @@ namespace WebApplication1
 	{
 		public static void Main(string[] args)
 		{
-			CreateHostBuilder(args).Build().Run();
+			using (ApplicationContext db = new ApplicationContext())
+			{
+				CreateHostBuilder(args).Build().Run();
+				db.patients.Where(i => i.clinic.ID == 1).Page(10, 1);
+			}
 		}
 
 		public static IHostBuilder CreateHostBuilder(string[] args) =>
