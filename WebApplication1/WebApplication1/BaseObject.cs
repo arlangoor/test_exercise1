@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace ProjectPatientsClinics
 {
+	/// <summary>
+	/// Базовый класс
+	/// </summary>
 	public abstract class BaseObject
 	{
 		/// <summary>

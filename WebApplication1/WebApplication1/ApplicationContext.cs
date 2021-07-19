@@ -42,8 +42,8 @@ namespace ProjectPatientsClinics
 		}
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlServer("Server=RU01-2830\\MSSQLSERVERDEV;Database=ProjectClinics;Trusted_Connection=True");
-			//optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=ProjectClinics;Trusted_Connection=True");
+			//optionsBuilder.UseSqlServer("Server=RU01-2830\\MSSQLSERVERDEV;Database=ProjectClinics;Trusted_Connection=True");
+			optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=ProjectClinics;Trusted_Connection=True");
 		}
 	}
 }

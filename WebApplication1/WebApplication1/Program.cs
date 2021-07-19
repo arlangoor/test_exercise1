@@ -13,16 +13,7 @@ namespace ProjectPatientsClinics
 	{
 		public static void Main(string[] args)
 		{
-			using (ApplicationContext db = new ApplicationContext())
-			{
-				//test
-				//Clinic clinic1 = new Clinic();
-				//clinic1.Name = "Больница 1";
-				//db.clinics.Add(clinic1);
-				//db.SaveChanges();
-				//var test =  db.clinics.ToList();
-				CreateHostBuilder(args).Build().Run();
-			}
+			CreateHostBuilder(args).Build().Run();
 		}
 
 		public static IHostBuilder CreateHostBuilder(string[] args) =>

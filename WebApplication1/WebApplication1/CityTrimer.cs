@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace ProjectPatientsClinics
 {
+	/// <summary>
+	/// Вобор данных о городе по формату
+	/// </summary>
 	public static class CityTrimer
 	{
 		/// <summary>
@@ -21,7 +24,7 @@ namespace ProjectPatientsClinics
 				if (endIndex > 0 && endIndex < city.Length)
 					return city.Substring(startIndex, endIndex - startIndex).Replace(" ","");
 			}
-			return city;
+			throw new Exception("Wrong format: 'City'");
 		}
 	}
 }
