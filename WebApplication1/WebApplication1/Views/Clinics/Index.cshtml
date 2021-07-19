@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ProjectPatientsClinics.Patient>
+﻿@model IEnumerable<ProjectPatientsClinics.Clinic>
 
 @{
     Layout = null;
@@ -22,13 +22,7 @@
                 @Html.DisplayNameFor(model => model.ID)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.City)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Clinic.Name)
             </th>
             <th></th>
         </tr>
@@ -40,14 +34,7 @@
                 @Html.DisplayFor(modelItem => item.ID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.City)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @if (item.Clinic != null)
-                    @Html.DisplayFor(modelItem => item.Clinic.Name)
             </td>
         </tr>
 }

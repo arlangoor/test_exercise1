@@ -16,8 +16,7 @@ namespace ProjectPatientsClinics
 		/// Клиники
 		/// </summary>
 		public DbSet<Clinic> clinics { get; set; }
-
-		public ApplicationContext()
+		private void CheckDataBase()
 		{
 			bool created = Database.EnsureCreated();
 			if (created)
@@ -32,9 +31,18 @@ namespace ProjectPatientsClinics
 				}
 			}
 		}
+		public ApplicationContext()
+		{
+			CheckDataBase();
+		}
+		public ApplicationContext(DbContextOptions<ApplicationContext> options)
+			: base(options)
+		{
+			CheckDataBase();
+		}
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlServer("Server=RU01-2830\\MSSQLSERVERDEV;Database=ProjectClinics;Trusted_Connection=True"); 
+			optionsBuilder.UseSqlServer("Server=RU01-2830\\MSSQLSERVERDEV;Database=ProjectClinics;Trusted_Connection=True");
 			//optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=ProjectClinics;Trusted_Connection=True");
 		}
 	}

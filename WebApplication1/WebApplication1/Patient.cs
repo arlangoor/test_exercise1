@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,8 +16,13 @@ namespace ProjectPatientsClinics
 		/// </summary>
 		public string City { get; set; }
 		/// <summary>
+		/// Внешний ключ
+		/// </summary>
+		public int clinicID { get; set; }
+		/// <summary>
 		/// Клиника пациента
 		/// </summary>
-		public Clinic clinic { get; set; }
+		[ForeignKey("clinicID")]
+		public Clinic Clinic { get; set; }
 	}
 }
